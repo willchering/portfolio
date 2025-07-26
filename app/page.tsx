@@ -9,7 +9,7 @@ export default function Home() {
       >
         <div>
           <h1 className="text-7xl sm:text-7xl font-bold">
-            Hello, I'm Will.<br />I'm a Software Engineer.
+            Hello, I&apos;m Will.<br />I&apos;m a Software Engineer.
           </h1>
           <div className="flex gap-4 justify-center mt-6">
 
