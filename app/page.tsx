@@ -42,17 +42,13 @@ export default function Home() {
             </a>
             {/* CV */}
             <a
-              href="/cv.pdf"
+              href="https://drive.google.com/file/d/1_GQoCsj7kKlQ9N7fyRuk3YhrQwRZxA3f/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center border border-white border-[1px] rounded-none bg-transparent text-white hover:bg-white hover:text-black transition-colors"
               aria-label="CV"
             >
-              {/* CV/Document Icon */}
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16 2v4a2 2 0 002 2h4" />
-              </svg>
+              <p>CV</p>
             </a>
           </div>
         </div>
