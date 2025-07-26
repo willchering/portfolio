@@ -69,65 +69,73 @@ export default function Home() {
             About Me
           </h1>
         </div>
-        <div className="mt-12 mb-12 flex flex-col md:flex-row justify-center items-stretch w-full gap-12 px-4 max-w-6xl mx-auto">
+        <div className="mt-12 mb-12 flex flex-col md:flex-row justify-center items-start md:items-center w-full gap-12 px-4 max-w-8xl mx-auto">
           {/* About Me Card (Left) */}
-          <div className="flex flex-row items-center bg-white/10 rounded-lg shadow-lg p-8 basis-1/2 gap-6">
+          <div className="flex flex-col items-center bg-white/10 rounded-lg shadow-lg p-8 gap-6 basis-auto md:basis-1/2">
             {/* User Icon */}
             <div className="flex-shrink-0">
-              <svg
-                className="w-20 h-20 text-white bg-blue-600 rounded-full p-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"
-                />
-              </svg>
+              <Image
+                src="/profile/me.png"
+                alt="Profile picture"
+                width={100}
+                height={100}
+                className="rounded-full p-2 object-cover"
+              />
             </div>
             {/* About Me Text */}
-            <div className="text-left text-white">
+            <div className="text-center text-white">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.
-                <br /><br />
-                Etiam vitae nisi sit amet lorem accumsan porta. Duis nec velit vel lacus dictum placerat.
+                I'm a backend developer with experience in building cloud-native, microservice-based systems using Java, Spring Boot, and AWS.
+                <br /> <br />
+                I’ve contributed to projects involving system modernization, risk prevention, and API development, with a strong focus on clean code, test-driven development, and Agile workflows.
+                <br /> <br />
+                While backend is my core strength, I’m also comfortable across the full stack and enjoy mentoring, problem-solving, and exploring new technologies.
               </p>
             </div>
           </div>
-          {/* Skills Grid (Right) */}
-          <div className="grid grid-cols-3 grid-rows-3 gap-4 basis-1/2">
-            {[
-              { name: "Java", icon: "/skills/java.png" },
-              { name: "Springboot", icon: "/skills/springboot.png" },
-              { name: "Next.js", icon: "/skills/nextjs_light.png" },
-              { name: "Cloud Native", icon: "/skills/cloud.png" },
-              { name: "Node.js", icon: "/skills/nodejs.png" },
-              { name: "Tailwind CSS", icon: "/skills/tailwind.png" },
-              { name: "Git", icon: "/skills/git.png" },
-              { name: "Docker", icon: "/skills/docker.png" },
-              { name: "Terraform", icon: "/skills/terraform.png" }
-
-            ].map((skill) => (
-              <div
-                key={skill.name}
-                className="flex flex-col items-center justify-center rounded-none bg-transparent text-white font-semibold aspect-square"
-              >
-                <Image
-                  src={skill.icon}
-                  alt={skill.name + ' icon'}
-                  width={40}
-                  height={40}
-                  className="mb-2"
-                />
-                <span className="text-2xl sm:text-2xl">{skill.name}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
+
+      <section id="tech-and-skills" className="flex flex-col items-center w-full text-center border-b border-white border-b-[1px]">
+  <div className="mt-12">
+    <h2 className="text-5xl sm:text-5xl font-bold text-center">
+      Technologies
+    </h2>
+  </div>
+  <div className="mt-12 mb-12 flex flex-row flex-wrap justify-center w-full max-w-8xl mx-auto gap-4">
+{[
+  { name: "Java", icon: "/skills/java.png" },
+  { name: "Springboot", icon: "/skills/springboot.png" },
+  { name: "Next.js", icon: "/skills/nextjs_light.png" },
+  { name: "Cloud", icon: "/skills/cloud.png" },
+  { name: "Node.js", icon: "/skills/nodejs.png" },
+  { name: "Tailwind CSS", icon: "/skills/tailwind.png" },
+  { name: "Git", icon: "/skills/git.png" },
+  { name: "Docker", icon: "/skills/docker.png" },
+  { name: "Terraform", icon: "/skills/terraform.png" }
+].map((skill) => (
+  <div
+    key={skill.name}
+    className="flex flex-col items-center justify-center bg-white/10 rounded-lg aspect-square min-w-[145px] min-h-[145px] max-w-[150px] max-h-[150px] text-white font-semibold p-10"
+  >
+    <Image
+      src={skill.icon}
+      alt={skill.name + ' icon'}
+      width={40}
+      height={40}
+      className="mb-2"
+    />
+    <span
+      className={`text-lg sm:text-xl text-center leading-tight ${
+        skill.name === "Tailwind CSS" ? "whitespace-nowrap" : ""
+      }`}
+    >
+      {skill.name}
+    </span>
+  </div>
+))}
+  </div>
+</section>
 
       <section id="projects"
         className="min-h-screen flex flex-col justify-center w-full">
