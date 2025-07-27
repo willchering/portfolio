@@ -85,11 +85,11 @@ export default function Home() {
             {/* About Me Text */}
             <div className="text-center text-white">
               <p>
-                I'm a backend developer with experience in building cloud-native, microservice-based systems using Java, Spring Boot, and AWS.
+                I&apos;m a backend developer with experience in building cloud-native, microservice-based systems using Java, Spring Boot, and AWS.
                 <br /> <br />
-                I’ve contributed to projects involving system modernization, risk prevention, and API development, with a strong focus on clean code, test-driven development, and Agile workflows.
+                I&apos;ve contributed to projects involving system modernization, risk prevention, and API development, with a strong focus on clean code, test-driven development, and Agile workflows.
                 <br /> <br />
-                While backend is my core strength, I’m also comfortable across the full stack and enjoy mentoring, problem-solving, and exploring new technologies.
+                While backend is my core strength, I&apos;m also comfortable across the full stack and enjoy mentoring, problem-solving, and exploring new technologies.
               </p>
             </div>
           </div>
