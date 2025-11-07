@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Projects from "@/app/projects"
+import Footer from "@/app/footer";
+
 
 export default function Home() {
   return (
@@ -97,96 +100,69 @@ export default function Home() {
       </section>
 
       <section id="tech-and-skills" className="flex flex-col items-center w-full text-center border-b border-white border-b-[1px]">
-  <div className="mt-12">
-    <h2 className="text-5xl sm:text-5xl font-bold text-center">
-      Technologies
-    </h2>
-  </div>
-  <div className="mt-12 mb-12 flex flex-row flex-wrap justify-center w-full max-w-8xl mx-auto gap-4">
-{[
-  { name: "Java", icon: "/skills/java.png" },
-  { name: "Springboot", icon: "/skills/springboot.png" },
-  { name: "Next.js", icon: "/skills/nextjs_light.png" },
-  { name: "Cloud", icon: "/skills/cloud.png" },
-  { name: "Node.js", icon: "/skills/nodejs.png" },
-  { name: "Tailwind CSS", icon: "/skills/tailwind.png" },
-  { name: "Git", icon: "/skills/git.png" },
-  { name: "Docker", icon: "/skills/docker.png" },
-  { name: "Terraform", icon: "/skills/terraform.png" }
-].map((skill) => (
-  <div
-    key={skill.name}
-    className="flex flex-col items-center justify-center bg-white/10 rounded-lg aspect-square min-w-[145px] min-h-[145px] max-w-[150px] max-h-[150px] text-white font-semibold p-10"
-  >
-    <Image
-      src={skill.icon}
-      alt={skill.name + ' icon'}
-      width={40}
-      height={40}
-      className="mb-2"
-    />
-    <span
-      className={`text-lg sm:text-xl text-center leading-tight ${
-        skill.name === "Tailwind CSS" ? "whitespace-nowrap" : ""
-      }`}
-    >
-      {skill.name}
-    </span>
-  </div>
-))}
-  </div>
-</section>
-
-      <section id="projects"
-        className="min-h-screen flex flex-col justify-center w-full">
-        <h2 className="text-5xl sm:text-5xl font-bold text-center mb-8 text-white">Projects</h2>
-
-        {[
-          {
-            title: "Project One",
-            description: "A brief description of Project One goes here.",
-            image: "/projects/project1.png",
-          },
-          {
-            title: "Project Two",
-            description: "A brief description of Project Two goes here.",
-            image: "/projects/project2.png",
-          },
-          {
-            title: "Project Three",
-            description: "A brief description of Project Three goes here.",
-            image: "/projects/project1.png",
-          },
-          {
-            title: "Project Four",
-            description: "A brief description of Project Four goes here.",
-            image: "/projects/project2.png",
-          },
-        ].map((project, idx) => (
-          <div
-            key={project.title}
-            className="flex flex-col md:flex-row items-center bg-transparent w-full max-w-6xl mx-auto mb-12 gap-8"
-          >
-            <div className="flex-shrink-0">
+        <div className="mt-12">
+          <h2 className="text-5xl sm:text-5xl font-bold text-center">
+            Technologies
+          </h2>
+        </div>
+        <div className="mt-12 mb-12 flex flex-row flex-wrap justify-center w-full max-w-8xl mx-auto gap-4">
+          {[
+            { name: "Java", icon: "/skills/java.png" },
+            { name: "Springboot", icon: "/skills/springboot.png" },
+            { name: "Next.js", icon: "/skills/nextjs_light.png" },
+            { name: "Cloud", icon: "/skills/cloud.png" },
+            { name: "Node.js", icon: "/skills/nodejs.png" },
+            { name: "Tailwind CSS", icon: "/skills/tailwind.png" },
+            { name: "Git", icon: "/skills/git.png" },
+            { name: "Docker", icon: "/skills/docker.png" },
+            { name: "Terraform", icon: "/skills/terraform.png" }
+          ].map((skill) => (
+            <div
+              key={skill.name}
+              className="flex flex-col items-center justify-center bg-white/10 rounded-lg aspect-square min-w-[145px] min-h-[145px] max-w-[150px] max-h-[150px] text-white font-semibold p-10"
+            >
               <Image
-                src={project.image}
-                alt={project.title}
-                width={320}
-                height={180}
-                className="rounded shadow-lg object-cover"
+                src={skill.icon}
+                alt={skill.name + ' icon'}
+                width={40}
+                height={40}
+                className="mb-2"
               />
+              <span
+                className={`text-lg sm:text-xl text-center leading-tight ${skill.name === "Tailwind CSS" ? "whitespace-nowrap" : ""
+                  }`}
+              >
+                {skill.name}
+              </span>
             </div>
-            <div className="flex flex-col items-start md:items-start text-white w-full">
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="mb-4">{project.description}</p>
-              <button className="px-4 py-1 border border-white border-[1px] rounded-none bg-transparent text-white font-semibold hover:bg-white hover:text-black transition-colors">
-                Learn more
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
+      <section id="projects"
+        className="flex flex-col w-full border-b border-white border-b-[1px]">
+
+        <h2 className="text-5xl sm:text-5xl font-bold text-center mb-8 text-white">Projects</h2>
+        <div className="projects-bento-container mb-12"
+          style={{
+            width: "80%",
+            textAlign: "center",
+            position: "relative",
+            marginLeft: "auto",
+            marginRight: "auto"
+          }}>
+          <Projects />
+        </div>
+        <div className="gap-4"></div>
+      </section>
+
+
+      <section id="footer"
+        className="w-full border-b border-white border-b-[1px]"
+      >
+        <Footer />
+      </section>
     </main>
+
   );
 }
